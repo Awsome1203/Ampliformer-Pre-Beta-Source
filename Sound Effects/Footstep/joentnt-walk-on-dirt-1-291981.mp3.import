@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b122xmo4s53rx"
+path="res://.godot/imported/joentnt-walk-on-dirt-1-291981.mp3-7866db4fc9a0c92aee20d2667a13a250.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/Footstep/joentnt-walk-on-dirt-1-291981.mp3"
+dest_files=["res://.godot/imported/joentnt-walk-on-dirt-1-291981.mp3-7866db4fc9a0c92aee20d2667a13a250.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

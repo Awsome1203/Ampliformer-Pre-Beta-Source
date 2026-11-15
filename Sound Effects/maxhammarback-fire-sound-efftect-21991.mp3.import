@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvdhlg8r2j1tf"
+path="res://.godot/imported/maxhammarback-fire-sound-efftect-21991.mp3-daaa9564a3558e4ca20dd07ea6aea9b5.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/maxhammarback-fire-sound-efftect-21991.mp3"
+dest_files=["res://.godot/imported/maxhammarback-fire-sound-efftect-21991.mp3-daaa9564a3558e4ca20dd07ea6aea9b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

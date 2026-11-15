@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dpexg2xj3kvwg"]
+
+[ext_resource type="Script" uid="uid://bwcnc742wfuur" path="res://Script/SoundSystem.gd" id="1_7pq2v"]
+
+[node name="SoundSystem" type="AudioStreamPlayer2D" unique_id=1352591973]
+max_distance = 1e+17
+panning_strength = 0.0
+script = ExtResource("1_7pq2v")

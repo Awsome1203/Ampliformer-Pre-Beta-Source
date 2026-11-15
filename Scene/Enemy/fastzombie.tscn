@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://b61rugxyl1d72"]
+
+[ext_resource type="Script" uid="uid://dv8hqol8wm8ox" path="res://Script/fastzombie.gd" id="1_op2gp"]
+[ext_resource type="Texture2D" uid="uid://kpr70cgo8w3u" path="res://Animation/Enemy/Zombie Sprite.png" id="2_aiwty"]
+[ext_resource type="Script" uid="uid://tohr6rpi75ga" path="res://Script/zombie1.gd" id="3_iw6un"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iw6un"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eseir"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(0, 0, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nqyo"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(475, 0, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnshm"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(950, 0, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5rsa"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(0, 466, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogcpr"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(475, 466, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i82o5"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(950, 466, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw3ev"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(0, 932, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4h2d"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(950, 466, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pub2r"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(475, 466, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcb2u"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(0, 466, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vm0g"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(950, 0, 475, 466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpxwj"]
+atlas = ExtResource("2_aiwty")
+region = Rect2(475, 0, 475, 466)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eseir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nqyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnshm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5rsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogcpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i82o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw3ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4h2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pub2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcb2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpxwj")
+}],
+"loop": 1,
+"name": &"Walking",
+"speed": 32.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
+radius = 114.99999
+height = 333.3333
+
+[node name="Quick Zombie" type="Node2D" unique_id=1300279168]
+position = Vector2(0, -33)
+script = ExtResource("1_op2gp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1400524923]
+self_modulate = Color(0, 1, 1, 1)
+material = SubResource("CanvasItemMaterial_iw6un")
+position = Vector2(-2, -37.999992)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"Walking"
+frame_progress = 0.7981689
+
+[node name="Area2D" type="Area2D" parent="." unique_id=207481114]
+script = ExtResource("3_iw6un")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1886224318]
+position = Vector2(8, -3)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CapsuleShape2D_1vivr")
+
+[node name="Timer" type="Timer" parent="Area2D" unique_id=1114298467]
+
+[node name="Left" type="RayCast2D" parent="." unique_id=1782748854]
+target_position = Vector2(-52, 0)
+
+[node name="Right" type="RayCast2D" parent="." unique_id=914413652]
+target_position = Vector2(64, 0)
+
+[node name="Bottom" type="RayCast2D" parent="." unique_id=75247255]
+target_position = Vector2(0, 111)
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_body_shape_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

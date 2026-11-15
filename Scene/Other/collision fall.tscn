@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ckodomyfelywo"]
+
+[ext_resource type="Script" uid="uid://kcuhr05sxt08" path="res://Script/collision fall.gd" id="1_q7guy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1vivr"]
+
+[node name="Area2D" type="Area2D" unique_id=1313876724]
+script = ExtResource("1_q7guy")
+
+[node name="Timer" type="Timer" parent="." unique_id=823240055]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1009276008]
+shape = SubResource("WorldBoundaryShape2D_1vivr")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

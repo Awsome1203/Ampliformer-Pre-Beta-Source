@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bf6sll8mgoo83"]
+
+[ext_resource type="Texture2D" uid="uid://byrahb2uglvu" path="res://Sprites/Spark.png" id="1_fstd4"]
+[ext_resource type="Script" uid="uid://yokg3pp2x5t4" path="res://Script/spark.gd" id="1_oq726"]
+[ext_resource type="AudioStream" uid="uid://bn5dufmxua6r0" path="res://Sound Effects/freesound_community-080998_bullet-hit-39870.mp3" id="3_6q18w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vrlf"]
+radius = 31.06445
+
+[node name="Spark" type="Area2D" unique_id=775802696]
+script = ExtResource("1_oq726")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1002934831]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_fstd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1910420959]
+position = Vector2(1, 28)
+shape = SubResource("CircleShape2D_8vrlf")
+
+[node name="Timer" type="Timer" parent="." unique_id=450469242]
+wait_time = 0.12
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=577867507]
+stream = ExtResource("3_6q18w")
+autoplay = true
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

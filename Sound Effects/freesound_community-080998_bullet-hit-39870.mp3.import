@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bn5dufmxua6r0"
+path="res://.godot/imported/freesound_community-080998_bullet-hit-39870.mp3-0207a52607b6b430e4f29e69b5346f32.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/freesound_community-080998_bullet-hit-39870.mp3"
+dest_files=["res://.godot/imported/freesound_community-080998_bullet-hit-39870.mp3-0207a52607b6b430e4f29e69b5346f32.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpr2li1wxl83h"
+path="res://.godot/imported/freesound_community-guitar-93245.mp3-8bc59600450338a3c4b0cd7e9c294828.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/Footstep/freesound_community-guitar-93245.mp3"
+dest_files=["res://.godot/imported/freesound_community-guitar-93245.mp3-8bc59600450338a3c4b0cd7e9c294828.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

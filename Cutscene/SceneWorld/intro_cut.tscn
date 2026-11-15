@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://ddj64kfqfi60u"]
+
+[ext_resource type="Texture2D" uid="uid://b1mucowlxubyf" path="res://Cutscene/Intro/Slide2.JPG" id="1_ve40e"]
+[ext_resource type="Script" uid="uid://rhj5utttdbpu" path="res://Cutscene/SceneWorld/intro_cut.gd" id="1_yhpjh"]
+[ext_resource type="Texture2D" uid="uid://df8vetju8ssc0" path="res://Sprites/Picture1.png" id="3_kvhkj"]
+[ext_resource type="Texture2D" uid="uid://d0x4q1w7h1cq0" path="res://Sprites/Picture2.png" id="4_y1u0b"]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_1vivr"]
+loop = true
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_y1u0b"]
+loop = true
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_kvhkj"]
+loop = true
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_8vrlf"]
+
+[sub_resource type="SystemFont" id="SystemFont_qbdty"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="Theme" id="Theme_1vivr"]
+default_font = SubResource("SystemFont_qbdty")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8pol"]
+texture = ExtResource("3_kvhkj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1u0b"]
+texture = ExtResource("4_y1u0b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_su4y3"]
+texture = ExtResource("4_y1u0b")
+
+[node name="IntroCut" type="Node2D" unique_id=488421877]
+script = ExtResource("1_yhpjh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=261755819]
+position = Vector2(577.5, 323.99997)
+scale = Vector2(0.9023438, 0.9055556)
+texture = ExtResource("1_ve40e")
+
+[node name="Timer" type="Timer" parent="." unique_id=720988501]
+
+[node name="Audio1" type="AudioStreamPlayer2D" parent="." unique_id=2031493748]
+stream = SubResource("AudioStreamMP3_1vivr")
+panning_strength = 0.0
+parameters/looping = true
+
+[node name="Audio2" type="AudioStreamPlayer2D" parent="." unique_id=1834957152]
+stream = SubResource("AudioStreamMP3_y1u0b")
+panning_strength = 0.0
+parameters/looping = true
+
+[node name="Audio3" type="AudioStreamPlayer2D" parent="." unique_id=1128646917]
+stream = SubResource("AudioStreamMP3_kvhkj")
+panning_strength = 0.0
+parameters/looping = true
+
+[node name="Audio4" type="AudioStreamPlayer2D" parent="." unique_id=266054100]
+stream = SubResource("AudioStreamMP3_kvhkj")
+panning_strength = 0.0
+
+[node name="Vocal" type="AudioStreamPlayer2D" parent="." unique_id=647676397]
+stream = SubResource("AudioStreamMP3_8vrlf")
+panning_strength = 0.0
+
+[node name="Button" type="Button" parent="." unique_id=248956589]
+offset_left = 892.0
+offset_top = 561.0
+offset_right = 1116.0
+offset_bottom = 626.0
+theme = SubResource("Theme_1vivr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_c8pol")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y1u0b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_su4y3")
+text = "Skip"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

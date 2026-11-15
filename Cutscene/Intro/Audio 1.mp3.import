@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b712fjt4atyyc"
+path="res://.godot/imported/Audio 1.mp3-4bc4eb4f5fb97b43d82748e5c1ed386f.mp3str"
+
+[deps]
+
+source_file="res://Cutscene/Intro/Audio 1.mp3"
+dest_files=["res://.godot/imported/Audio 1.mp3-4bc4eb4f5fb97b43d82748e5c1ed386f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://irieuq2nqxw7"]
+
+[ext_resource type="Script" uid="uid://ckc16x7h27ges" path="res://Script/damaged.gd" id="1_51fq6"]
+[ext_resource type="Texture2D" uid="uid://ctd84cfys8hwq" path="res://Sprites/Cactus.png" id="2_k6ivs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
+radius = 15.0
+height = 178.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11yeh"]
+radius = 15.0
+height = 98.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8rnpp"]
+radius = 15.0
+height = 98.0
+
+[node name="Cactus" type="Area2D" unique_id=1767038339]
+position = Vector2(0, -46)
+scale = Vector2(1.1, 1.1)
+script = ExtResource("1_51fq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=612666]
+scale = Vector2(0.2, 0.25)
+texture = ExtResource("2_k6ivs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=881887854]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_1vivr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2016898136]
+position = Vector2(-28, -36)
+shape = SubResource("CapsuleShape2D_11yeh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1624520189]
+position = Vector2(29, 1)
+shape = SubResource("CapsuleShape2D_8rnpp")
+
+[node name="Timer" type="Timer" parent="." unique_id=974579651]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

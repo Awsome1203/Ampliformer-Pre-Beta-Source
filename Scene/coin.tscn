@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cj3h2plaigh1k"]
+
+[ext_resource type="Script" uid="uid://cwi7fou6cbsgh" path="res://Script/coin.gd" id="1_5e757"]
+[ext_resource type="Texture2D" uid="uid://88kusextjcmi" path="res://Sprites/Coins.png" id="2_1g4lx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 49.819675
+
+[sub_resource type="Animation" id="Animation_jea4o"]
+resource_name = "Coin"
+length = 2.000004226271436
+loop_mode = 2
+step = 0.041666668
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.33333406, 0, 0, -0.33333406, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.0000043)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-25, 0, 0, 0.33333406, 2.5, -35, -0.33333406, 1.6666667, 0, 0),
+"times": PackedFloat32Array(0, 2.0000043)
+}
+
+[sub_resource type="Animation" id="Animation_byqvs"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_5e757"]
+resource_name = "coin"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hncfd"]
+_data = {
+&"Coin": SubResource("Animation_jea4o"),
+&"RESET": SubResource("Animation_byqvs"),
+&"coin": SubResource("Animation_5e757")
+}
+
+[node name="Coin" type="Node2D" unique_id=1196773549]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1867663456]
+script = ExtResource("1_5e757")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=73452662]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1g4lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=857071758]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" unique_id=673964800]
+libraries/ = SubResource("AnimationLibrary_hncfd")
+autoplay = &"Coin"
+
+[connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_body_shape_entered"]

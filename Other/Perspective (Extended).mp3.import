@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmxr20par7wyh"
+path="res://.godot/imported/Perspective (Extended).mp3-deee3e10b8c64c1a117d9db37f29a701.mp3str"
+
+[deps]
+
+source_file="res://Other/Perspective (Extended).mp3"
+dest_files=["res://.godot/imported/Perspective (Extended).mp3-deee3e10b8c64c1a117d9db37f29a701.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

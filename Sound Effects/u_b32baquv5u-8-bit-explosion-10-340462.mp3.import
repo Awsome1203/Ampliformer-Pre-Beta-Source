@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bm77mdbd1jvbg"
+path="res://.godot/imported/u_b32baquv5u-8-bit-explosion-10-340462.mp3-a94be34c2202d963a2b79dbd9105b0e6.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/u_b32baquv5u-8-bit-explosion-10-340462.mp3"
+dest_files=["res://.godot/imported/u_b32baquv5u-8-bit-explosion-10-340462.mp3-a94be34c2202d963a2b79dbd9105b0e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dttrtoi50xhun"]
+
+[ext_resource type="Script" uid="uid://d1a3iwsmw58vj" path="res://Script/Finish.gd" id="1_k4dl0"]
+[ext_resource type="Texture2D" uid="uid://cg1pqsvjhvdwf" path="res://Sprites/finish line.png" id="1_pd1k1"]
+[ext_resource type="AudioStream" uid="uid://27ofwiu0x4oh" path="res://Other/Finished.mp3" id="3_pgf0i"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1vivr"]
+normal = Vector2(-1, 0)
+
+[node name="Finish" type="Node2D" unique_id=1713855799]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1539879808]
+script = ExtResource("1_k4dl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1578070224]
+shape = SubResource("WorldBoundaryShape2D_1vivr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1941216462]
+scale = Vector2(0.37110707, 0.31393445)
+texture = ExtResource("1_pd1k1")
+
+[node name="Timer" type="Timer" parent="Area2D" unique_id=611942525]
+wait_time = 5.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D" unique_id=891779900]
+stream = ExtResource("3_pgf0i")
+max_distance = 1e+17
+panning_strength = 0.0
+
+[connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_body_shape_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

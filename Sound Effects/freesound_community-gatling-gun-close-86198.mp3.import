@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cp74vbskyst1i"
+path="res://.godot/imported/freesound_community-gatling-gun-close-86198.mp3-9738e18d4149752f63631be9d7c8f590.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/freesound_community-gatling-gun-close-86198.mp3"
+dest_files=["res://.godot/imported/freesound_community-gatling-gun-close-86198.mp3-9738e18d4149752f63631be9d7c8f590.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

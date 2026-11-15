@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cpeqgqxyedua6"]
+
+[ext_resource type="Script" uid="uid://d21y3idlbf4ex" path="res://Script/theme_soundtrack.gd" id="2_roa1y"]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_roa1y"]
+loop = true
+
+[node name="ThemeSoundtrack" type="AudioStreamPlayer2D" unique_id=803498292]
+stream = SubResource("AudioStreamMP3_roa1y")
+max_distance = 1e+17
+panning_strength = 0.0
+parameters/looping = true
+script = ExtResource("2_roa1y")

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://rvc6iebdgc5s"]
+
+[ext_resource type="Script" uid="uid://6j0rxe55j1fy" path="res://Script/tumbleweedRight.gd" id="1_l0hgd"]
+[ext_resource type="Texture2D" uid="uid://l40y5fqv1sg" path="res://Animation/Enemy/Tumbleweed2/frame000000000001.png" id="2_4lodm"]
+[ext_resource type="Texture2D" uid="uid://b5g8k5idefrch" path="res://Animation/Enemy/Tumbleweed2/frame000000000000.png" id="3_vsxhe"]
+[ext_resource type="AudioStream" uid="uid://dq1vyfjavd3ss" path="res://Sound Effects/freesound_community-gun-shots-from-a-distance-7-96391.mp3" id="4_4lodm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w7ao"]
+atlas = ExtResource("2_4lodm")
+region = Rect2(2, 2, 254, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc7n3"]
+atlas = ExtResource("3_vsxhe")
+region = Rect2(2, 2, 254, 254)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w7ao")
+}],
+"loop": 1,
+"name": &"Shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc7n3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 67.47592
+
+[node name="Tumbleweed" type="Node2D" unique_id=330783885]
+position = Vector2(0, -54)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_l0hgd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=763021286]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1683585378]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1681814139]
+position = Vector2(-17, 5)
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="Refresh" type="Timer" parent="Area2D" unique_id=1909768245]
+one_shot = true
+
+[node name="Timer" type="Timer" parent="." unique_id=675140359]
+process_callback = 0
+wait_time = 2.0
+
+[node name="Cooldown" type="Timer" parent="." unique_id=667702482]
+process_callback = 0
+wait_time = 0.1
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1253872555]
+stream = ExtResource("4_4lodm")
+volume_db = -4.0
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="timeout" from="Area2D/Refresh" to="." method="_on_refresh_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

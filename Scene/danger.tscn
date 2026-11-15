@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c2ecigyxf57p1"]
+
+[ext_resource type="Texture2D" uid="uid://cfhit174ve4wy" path="res://Sprites/Danger.png" id="1_41xl4"]
+
+[node name="Danger" type="Sprite2D" unique_id=68389374]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_41xl4")

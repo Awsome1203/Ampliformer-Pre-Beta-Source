@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7xaydqaubt7g"
+path="res://.godot/imported/One Warning Sign Contains Many Hazards!.mp3-f3d76d4d7bb53b148cd331776463573d.mp3str"
+
+[deps]
+
+source_file="res://Other/One Warning Sign Contains Many Hazards!.mp3"
+dest_files=["res://.godot/imported/One Warning Sign Contains Many Hazards!.mp3-f3d76d4d7bb53b148cd331776463573d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

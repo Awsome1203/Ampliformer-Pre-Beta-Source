@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://duuwnj60sf306"]
+
+[ext_resource type="Script" uid="uid://dihi8j3jmd27f" path="res://Script/spike.gd" id="1_3fxtd"]
+[ext_resource type="Texture2D" uid="uid://pkxxsdaosupj" path="res://Sprites/pointy.png" id="2_xd7bm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5tgd"]
+size = Vector2(128, 128)
+
+[node name="Spike" type="Area2D" unique_id=2084001072]
+script = ExtResource("1_3fxtd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=159354396]
+scale = Vector2(0.391, 0.391)
+texture = ExtResource("2_xd7bm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1475521173]
+scale = Vector2(0.781, 0.781)
+shape = SubResource("RectangleShape2D_o5tgd")
+
+[node name="Timer" type="Timer" parent="." unique_id=1391111745]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

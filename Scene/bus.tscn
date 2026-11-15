@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bflw85myotbtu"]
+
+[ext_resource type="Texture2D" uid="uid://dw2ce51g81ysa" path="res://Sprites/bus1.png" id="1_2swd7"]
+[ext_resource type="Script" uid="uid://onkr3le68e7f" path="res://Script/bus.gd" id="2_7xfne"]
+[ext_resource type="AudioStream" uid="uid://l8jifuuhaq8y" path="res://Sound Effects/freesound_community-bus-engine-47297.mp3" id="3_ys8ms"]
+
+[node name="Bus" type="Sprite2D" unique_id=679209089]
+z_index = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_2swd7")
+script = ExtResource("2_7xfne")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=952142137]
+stream = ExtResource("3_ys8ms")
+volume_db = 5.0
+autoplay = true
+parameters/looping = true
